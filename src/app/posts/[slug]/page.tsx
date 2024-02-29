@@ -50,7 +50,6 @@ const Post = async ({ params }: any) => {
       </div>
       <div className="mt-5">
         <Comment postSlug={data.slug} />
-        {/* <Menu /> */}
       </div>
     </div>
   );

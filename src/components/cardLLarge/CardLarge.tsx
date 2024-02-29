@@ -12,7 +12,7 @@ const CardLarge = async ({ item }: { item: iPost }) => {
         alt="photo"
         width={1000}
         height={400}
-        className="h-[300px] object-cover opacity-70"
+        className="h-[350px] object-cover opacity-70"
       />
       <div className="absolute bottom-5 left-5 text-white">
         <div className="text-lg uppercase font-mono">{item.catSlug}</div>

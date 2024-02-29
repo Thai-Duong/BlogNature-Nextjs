@@ -27,6 +27,7 @@ export default function Comment({ postSlug }: any) {
         desc,
         postSlug,
       });
+      setDesc("");
       getData({ postSlug });
     } catch (error) {
       console.error(error);

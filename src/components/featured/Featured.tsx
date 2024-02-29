@@ -10,9 +10,9 @@ const Featured = async () => {
   const itemCardLagre = data[5];
   return (
     <div>
-      <div className="text-center justify-center mt-20">
+      <div className="text-center justify-center pt-20">
         <div className="text-6xl font-bold mb-5">LATEST STORIES</div>
-        <div className="text-xl">
+        <div className="text-xl ">
           Subscribe for full access to read stories from National Geographic.
         </div>
         <div className="bg-yellow-500 w-16 h-1 my-5 mx-auto"></div>

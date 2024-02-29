@@ -24,7 +24,10 @@ const CategoryList = async () => {
               key={item.id}
               className="flex justify-center bg-[#57c4ff31] py-2 border rounded-md"
             >
-              <Link href="#" className="flex items-center px-2">
+              <Link
+                href={`/categories/${item.slug}`}
+                className="flex items-center px-2"
+              >
                 {/* <Image src={item.img} alt="" width={40px} className="w-10 h-10 mr-3" /> */}
                 {item.title}
               </Link>

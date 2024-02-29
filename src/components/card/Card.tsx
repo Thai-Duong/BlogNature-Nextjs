@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Card({ item }: { item: iPost }) {
   return (
-    <div className="border h-[380px]">
+    <div className="border h-[380px] ">
       <Image
         src={item.img}
         alt="photo"
