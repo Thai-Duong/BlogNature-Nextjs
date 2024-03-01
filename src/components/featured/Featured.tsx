@@ -10,7 +10,7 @@ const Featured = async () => {
   const itemCardLagre = data[5];
   return (
     <div>
-      <div className="text-center justify-center pt-20">
+      <div className="text-center justify-center ">
         <div className="text-6xl font-bold mb-5">LATEST STORIES</div>
         <div className="text-xl ">
           Subscribe for full access to read stories from National Geographic.
@@ -23,11 +23,9 @@ const Featured = async () => {
         </div>
         <div className="col-span-8">
           <CardLarge item={itemCardLagre} />
-          <div className="grid grid-cols-2 gap-10 mt-10">
+          <div className="flex justify-between mt-10">
             {data?.slice(0, 2).map((item: iPost) => (
-              <div className="col-span-1" key={item._id}>
-                <Card item={item} />
-              </div>
+              <Card key={item._id} item={item} />
             ))}
           </div>
         </div>

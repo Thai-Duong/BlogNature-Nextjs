@@ -5,17 +5,19 @@ import Link from "next/link";
 
 export default function Card({ item }: { item: iPost }) {
   return (
-    <div className="border h-[380px] ">
+    <div className="border h-[380px] w-[300px]">
       <Image
         src={item.img}
         alt="photo"
-        width={1000}
-        height={200}
-        className="h-[180px] object-cover"
+        width={800}
+        height={10}
+        className="h-[200px] object-cover"
       />
-      <div className="p-3 ">
+      <div className="p-2">
         <div className="uppercase">{item.catSlug}</div>
-        <div className="text-lg font-bold">{item.title}</div>
+        <div className="min-h-[3rem] text-xl line-clamp-3 font-bold py-3">
+          {item.title}
+        </div>
         <div className="flex">
           <svg
             xmlns="http://www.w3.org/2000/svg"

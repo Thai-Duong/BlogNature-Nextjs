@@ -24,9 +24,7 @@ const Categories = async ({ params }: any) => {
         <CardLarge item={data.Posts[0]} />
       </div>
       {data.Posts.map((item: iPost) => (
-        <div key={item._id}>
-          <Card item={item} />
-        </div>
+        <Card key={item._id} item={item} />
       ))}
     </div>
   );

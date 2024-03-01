@@ -4,10 +4,10 @@ import Featured from "@/components/featured/Featured";
 
 export default function Home() {
   return (
-    <>
+    <div className="py-5">
       <Featured />
       <CategoryList />
       <CardList />
-    </>
+    </div>
   );
 }

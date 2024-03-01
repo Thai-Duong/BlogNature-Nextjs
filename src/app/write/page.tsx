@@ -84,7 +84,7 @@ export default function WritePage() {
     }
   };
   return (
-    <div className="mt-10">
+    <div className="py-20">
       <input
         type="text"
         placeholder="Main Title"
@@ -94,24 +94,24 @@ export default function WritePage() {
       <input
         type="file"
         onChange={(e) => setFile(e.target.files?.[0])}
-        className="border "
+        className="border"
       />
       <select
         onChange={(e) => setCatSlug(e.target.value)}
-        className="py-1 border "
+        className="py-1 border mx-5"
       >
-        <option value="Animals">Animals</option>
-        <option value="Environment">Environment</option>
-        <option value="History and Culture">History and Culture</option>
-        <option value="Science">Science</option>
-        <option value="Travel">Travel</option>
+        <option value="animals">Animals</option>
+        <option value="environment">Environment</option>
+        <option value="history-culture">History and Culture</option>
+        <option value="science">Science</option>
+        <option value="travel">Travel</option>
       </select>
       <ReactQuill
         theme="bubble"
         value={value}
         onChange={setValue}
         placeholder="Tell your story"
-        className="my-5 text-lg border-none"
+        className="m-5 text-lg border-none"
       />
       <button
         onClick={handleSubmit}

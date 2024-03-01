@@ -16,7 +16,7 @@ const Post = async ({ params }: any) => {
   const data = await getData(slug);
   if (!data) return null;
   return (
-    <div className="mt-5 z-10">
+    <div className="mx-5">
       <div className="grid gap-5 lg:grid-cols-2">
         <div className="flex flex-col justify-between">
           <h1 className="text-4xl font-bold">{data.title}</h1>
