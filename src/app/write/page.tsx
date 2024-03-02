@@ -84,7 +84,7 @@ export default function WritePage() {
     }
   };
   return (
-    <div className="py-20">
+    <div className="py-10">
       <input
         type="text"
         placeholder="Main Title"

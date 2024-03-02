@@ -16,11 +16,11 @@ const Post = async ({ params }: any) => {
   const data = await getData(slug);
   if (!data) return null;
   return (
-    <div className="mx-5">
+    <div className="mx-[200px]">
       <div className="grid gap-5 lg:grid-cols-2">
         <div className="flex flex-col justify-between">
           <h1 className="text-4xl font-bold">{data.title}</h1>
-          <div className="flex gap-3 my-3">
+          <div className="flex gap-3">
             <Image
               src={data.user.image}
               alt=""
@@ -44,7 +44,7 @@ const Post = async ({ params }: any) => {
       </div>
       <div className="gap-10 mt-5 lg:flex">
         <div
-          className="mt-10"
+          className="mt-10 text-xl"
           dangerouslySetInnerHTML={{ __html: data?.desc }}
         ></div>
       </div>
