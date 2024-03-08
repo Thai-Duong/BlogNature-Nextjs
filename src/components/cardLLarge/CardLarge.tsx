@@ -1,4 +1,3 @@
-import { getData } from "@/app/api/posts/route";
 import { iPost } from "@/types/post.type";
 import Image from "next/image";
 import Link from "next/link";
