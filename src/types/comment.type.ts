@@ -1,4 +1,3 @@
-import { iPost } from "./post.type";
 import { iUser } from "./user.type";
 
 export interface iComment {

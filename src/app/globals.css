@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 body {
-  font-family: "Segoe UI", "Roboto", "Arial", "Helvetica Neue", "Helvetica",
-    sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
+
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -19,28 +19,14 @@ body {
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
-.dark {
-  --bg: black;
-  --textColor: #ddd;
-  --softBg: #1f273a;
-  --softTextColor: #a6a6a6;
-}
-.light {
-  --bg: white;
-  --textColor: black;
-  --softBg: #f0f0f0;
-  --softTextColor: #626262;
-}
 .wrapper {
-  /* background-color: var(--bg);
-  color: var(--textColor); */
   max-width: 1536px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 150px;
-  padding-right: 150px;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .container {
   background-color: var(--bg);
@@ -69,9 +55,9 @@ body {
   justify-content: center;
   align-items: center;
 }
-/* 
+
 .swiper {
-  width: 240px;
+  width: 100%;
   height: 320px;
 }
 
@@ -79,48 +65,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 18px;
   font-size: 22px;
   font-weight: bold;
   color: #fff;
 }
-
-.swiper-slide:nth-child(1n) {
-  background-color: rgb(206, 17, 17);
-}
-
-.swiper-slide:nth-child(2n) {
-  background-color: rgb(0, 140, 255);
-}
-
-.swiper-slide:nth-child(3n) {
-  background-color: rgb(10, 184, 111);
-}
-
-.swiper-slide:nth-child(4n) {
-  background-color: rgb(211, 122, 7);
-}
-
-.swiper-slide:nth-child(5n) {
-  background-color: rgb(118, 163, 12);
-}
-
-.swiper-slide:nth-child(6n) {
-  background-color: rgb(180, 10, 47);
-}
-
-.swiper-slide:nth-child(7n) {
-  background-color: rgb(35, 99, 19);
-}
-
-.swiper-slide:nth-child(8n) {
-  background-color: rgb(0, 68, 255);
-}
-
-.swiper-slide:nth-child(9n) {
-  background-color: rgb(218, 12, 218);
-}
-
-.swiper-slide:nth-child(10n) {
-  background-color: rgb(54, 94, 77);
-} */

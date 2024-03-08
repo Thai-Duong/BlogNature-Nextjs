@@ -3,8 +3,7 @@ import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
-  const { status, data } = useSession();
-  console.log(status, data);
+  const { status } = useSession();
   const router = useRouter();
   if (status === "loading") {
     return <div>Loading...</div>;
@@ -21,9 +20,6 @@ export default function LoginPage() {
         >
           Sign in with Goggle
         </div>
-        {/* <div className="p-5 mt-3 text-center text-white bg-blue-500">
-          Sign in with Facebook
-        </div>{" "} */}
       </div>
     </div>
   );

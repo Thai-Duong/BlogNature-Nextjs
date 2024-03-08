@@ -3,13 +3,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="text-white mt-5 bg-black text-sm">
-      {/* <div className="bg-i\">
-        <Image src="/banner.webp" alt="" width={100} height={0} />
-        <button className="relative py-5 px-[150px] text-black text-base font-bold nded-full overflow-hidden bg-[#ffcc00]  transition-all duration-400 ease-in-out shadow-md hover:scale-105  hover:shadow-lg active:scale-90 before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-white before:to-white before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-full hover:before:left-0">
-          HOVER ME!
-        </button>
-      </div> */}
+    <div className="text-white bg-black text-sm">
       <div className="grid grid-cols-4 wrapper ">
         <div className="flex flex-col gap-3">
           <div className="font-bold">LEGAL</div>

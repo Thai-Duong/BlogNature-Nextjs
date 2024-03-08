@@ -1,4 +1,5 @@
 import prisma from "@/utils/connect";
+import axios from "axios";
 import { NextResponse } from "next/server";
 
 export const GET = async () => {
@@ -10,5 +11,13 @@ export const GET = async () => {
     return new NextResponse(
       JSON.stringify({ message: "Something went wrong!" })
     );
+  }
+};
+export const getData = async () => {
+  try {
+    const response = await axios.get("http://localhost:3000/api/categories");
+    return response.data;
+  } catch (error) {
+    console.error(error);
   }
 };

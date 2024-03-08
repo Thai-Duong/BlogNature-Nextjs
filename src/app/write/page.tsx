@@ -16,7 +16,6 @@ const storage = getStorage(app);
 
 export default function WritePage() {
   const router = useRouter();
-
   const [value, setValue] = useState("");
   const [file, setFile] = useState<File | null>();
   const [media, setMedia] = useState("");
@@ -84,7 +83,7 @@ export default function WritePage() {
     }
   };
   return (
-    <div className="py-10">
+    <div className="py-10 wrapper bg-white">
       <input
         type="text"
         placeholder="Main Title"

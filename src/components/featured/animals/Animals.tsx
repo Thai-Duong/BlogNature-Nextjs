@@ -1,15 +1,14 @@
-import axios from "axios";
-import CardLarge from "../cardLLarge/CardLarge";
-import CardSmall from "../cardsmall/CardSmall";
 import { getData } from "@/app/api/posts/route";
-import Card from "../card/Card";
 import { iPost } from "@/types/post.type";
+import Card from "../../card/Card";
+import CardLarge from "../../cardLLarge/CardLarge";
+import CardSmall from "../../cardsmall/CardSmall";
 
-const Featured = async () => {
+const LastStory = async () => {
   const data = await getData();
   const itemCardLagre = data[5];
   return (
-    <div>
+    <div className="wrapper">
       <div className="text-center justify-center ">
         <div className="text-6xl font-bold mb-5">LATEST STORIES</div>
         <div className="text-xl ">
@@ -33,4 +32,4 @@ const Featured = async () => {
     </div>
   );
 };
-export default Featured;
+export default LastStory;
