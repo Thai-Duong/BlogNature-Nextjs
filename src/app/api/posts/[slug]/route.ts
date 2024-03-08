@@ -19,11 +19,3 @@ export const GET = async (req: any, { params }: any) => {
     );
   }
 };
-export const getData = async (slug: string) => {
-  try {
-    const res = await axios.get(`http://localhost:3000/api/posts/${slug}`);
-    return res.data;
-  } catch (error) {
-    console.log(error);
-  }
-};

@@ -1,10 +1,9 @@
-import axios from "axios";
 import Card from "../card/Card";
 import { iPost } from "@/types/post.type";
-import { getData } from "@/app/api/posts/route";
+import { getPosts } from "@/app/getApi/posts";
 
 const CardList = async () => {
-  const data = await getData();
+  const data = await getPosts();
   return (
     <div className="wrapper">
       <h5 className=" text-2xl font-bold">Popular Category</h5>

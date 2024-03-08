@@ -1,11 +1,11 @@
-import { getData } from "@/app/api/posts/route";
 import { iPost } from "@/types/post.type";
 import Card from "../../card/Card";
 import CardLarge from "../../cardLLarge/CardLarge";
 import CardSmall from "../../cardsmall/CardSmall";
+import { getPosts } from "@/app/getApi/posts";
 
 const LastStory = async () => {
-  const data = await getData();
+  const data = await getPosts();
   const itemCardLagre = data[5];
   return (
     <div className="wrapper">

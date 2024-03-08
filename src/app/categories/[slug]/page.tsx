@@ -1,11 +1,11 @@
-import { getData } from "@/app/api/categories/[slug]/route";
+import { getAllCategories } from "@/app/getApi/categories";
 import Card from "@/components/card/Card";
 import CardLarge from "@/components/cardLLarge/CardLarge";
 import { iPost } from "@/types/post.type";
 
 const Categories = async ({ params }: any) => {
   const { slug } = params;
-  const category = await getData(slug);
+  const category = await getAllCategories(slug);
   const data = await category[0];
   return (
     <div className="grid grid-cols-3 gap-8 py-5 wrapper">

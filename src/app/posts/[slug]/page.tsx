@@ -1,11 +1,11 @@
-import { getData } from "@/app/api/posts/[slug]/route";
+import { getAllPosts } from "@/app/getApi/posts";
 import Comment from "@/components/comment/page";
 import { formatDate } from "@/utils/utilis";
 import Image from "next/image";
 
 const Post = async ({ params }: any) => {
   const { slug } = params;
-  const data = await getData(slug);
+  const data = await getAllPosts(slug);
   if (!data) return null;
   return (
     <div className="">

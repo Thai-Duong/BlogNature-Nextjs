@@ -9,7 +9,7 @@ import Image from "next/image";
 import { iCategories } from "@/types/categories.type";
 export default function Silde({ data }: { data: iCategories }) {
   return (
-    <div className="my-5">
+    <div className="my-5" key={data.id}>
       <Swiper
         slidesPerView={5}
         spaceBetween={20}

@@ -1,9 +1,9 @@
-import { getData } from "@/app/api/categories/route";
+import { getCategories } from "@/app/getApi/categories";
 import { iCategories } from "@/types/categories.type";
 import Link from "next/link";
 
 const CategoryList = async () => {
-  const data = await getData();
+  const data = await getCategories();
   if (!data) return null;
   return (
     <div className="mt-2 wrapper">

@@ -1,9 +1,9 @@
-import { getData } from "@/app/api/categories/[slug]/route";
+import { getAllCategories } from "@/app/getApi/categories";
 import Silde from "@/components/swiper/Silde";
 import Image from "next/image";
 
 const Culture = async () => {
-  const category = await getData("history-culture");
+  const category = await getAllCategories("history-culture");
   const data = category[0];
   return (
     <div className="my-5 bg-black h-[1200px]">
