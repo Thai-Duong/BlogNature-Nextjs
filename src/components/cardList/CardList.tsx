@@ -6,10 +6,12 @@ const CardList = async () => {
   const data = await getPosts();
   return (
     <div className="wrapper">
-      <h5 className=" text-2xl font-bold">Popular Category</h5>
-      <div className="my-6 grid lg:grid-cols-1 xl:grid-cols-3 gap-5 justify-between">
+      <h5 className="text-2xl font-bold my-3">Popular Category</h5>
+      <div className="md:grid grid-cols-2 md:grid-cols-3 items-center justify-between gap-10">
         {data?.slice(0, 6).map((item: iPost) => (
-          <Card key={item._id} item={item} />
+          <div className="item-center" key={item._id}>
+            <Card item={item} />
+          </div>
         ))}
       </div>
     </div>

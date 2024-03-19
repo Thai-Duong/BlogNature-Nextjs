@@ -8,14 +8,14 @@ const Post = async ({ params }: any) => {
   const data = await getAllPosts(slug);
   if (!data) return null;
   return (
-    <div className="">
-      <div className="flex">
+    <div>
+      <div className="lg:flex">
         <Image
           src={data.img}
           alt=""
           width={1000}
           height={200}
-          className="h-[600px] w-[800px] object-cover"
+          className="h-[600px] w-[800px] object-cover mb-3"
         />
         <div className="my-auto mx-5">
           <span className="p-2 border-2 border-black hover:text-white hover:bg-black">
@@ -29,15 +29,13 @@ const Post = async ({ params }: any) => {
         </div>
       </div>
 
-      <div className="gap-10 mt-5 lg:flex mx-[350px]">
+      <div className="gap-10 mt-5 lg:flex p-5 xl:mx-[400px]">
         <div
           className="mt-10 text-xl"
           dangerouslySetInnerHTML={{ __html: data?.desc }}
         ></div>
       </div>
-      <div className="mt-5 mx-[350px]">
-        <Comment postSlug={data.slug} />
-      </div>
+      <Comment postSlug={data.slug} />
     </div>
   );
 };

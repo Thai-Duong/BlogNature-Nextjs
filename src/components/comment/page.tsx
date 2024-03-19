@@ -38,7 +38,7 @@ export default function Comment({ postSlug }: any) {
   }, [postSlug]);
   if (!data) return null;
   return (
-    <div>
+    <div className="my-5 wrapper">
       <h1 className="mb-4 text-2xl font-bold">Comment</h1>
       {status === "authenticated" ? (
         <div className="flex gap-3">

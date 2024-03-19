@@ -1,6 +1,7 @@
 import { getAllCategories } from "@/app/getApi/categories";
 import Silde from "@/components/swiper/Silde";
 import Image from "next/image";
+import Link from "next/link";
 
 const Culture = async () => {
   const category = await getAllCategories("history-culture");
@@ -16,7 +17,7 @@ const Culture = async () => {
       />
       <div className="text-white text-center wrapper ">
         <div className="text-xl mb-10">ARCTIC ASCENT</div>
-        <p className="px-[150px]">
+        <p className="md:px-[150px]">
           Alex Honnold leads a six-week expedition to eastern Greenland to make
           a first ascent of one of the highest unclimbed rock faces in the
           world, but this is much more than a climbing trip. With the help of
@@ -33,16 +34,19 @@ const Culture = async () => {
           </div>
         </div>
         <div className="">
-          <div className="flex justify-between">
-            <div className="text-xl">DISCOVER MORE HISTORY AND CULTURE</div>
-            <div className="flex items-center justify-center cursor-pointer">
-              <div className="relative  font-semibold  text-indigo-600 transition-all duration-150 ease-in-out  dark:text-white  dark:shadow-none group">
+          <div className="flex md:justify-between">
+            <div className="md:text-xl">DISCOVER MORE HISTORY AND CULTURE</div>
+            <Link
+              href={`/categories/history-culture`}
+              className="flex items-center justify-center cursor-pointer"
+            >
+              <div className="relative font-semibold  text-indigo-600 transition-all duration-150 ease-in-out  dark:text-white  dark:shadow-none group">
                 <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-yellow-600 group-hover:h-full"></span>
                 <span className="relative  w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white ">
                   SEE MORE
                 </span>
               </div>
-            </div>
+            </Link>
           </div>
           <Silde data={data} />
         </div>

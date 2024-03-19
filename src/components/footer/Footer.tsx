@@ -4,8 +4,8 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <div className="text-white bg-black text-sm">
-      <div className="grid grid-cols-4 wrapper ">
-        <div className="flex flex-col gap-3">
+      <div className="md:grid md:grid-cols-4 wrapper ">
+        <div className="flex flex-col gap-3 mt-2">
           <div className="font-bold">LEGAL</div>
           <Link href="/">Terms of Use</Link>
           <Link href="/">Privacy Policy</Link>
@@ -15,7 +15,7 @@ export default function Footer() {
           <Link href="/">About Nielsen Measurement</Link>
           <Link href="/">Do Not Sell or Share My Personal Information</Link>
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 mt-2">
           <div className="font-bold">OUT SITE</div>
           <Link href="/">Nat Geo Home</Link>
           <Link href="/">Attend a Live Event</Link>
@@ -28,7 +28,7 @@ export default function Footer() {
           <Link href="/">Learn About Our Impact</Link>
           <Link href="/">Support Our Mission</Link>
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 mt-2">
           <div className="font-bold">JOIN US</div>
           <Link href="/">Terms of Use</Link>
           <Link href="/">Privacy Policy</Link>
@@ -38,7 +38,7 @@ export default function Footer() {
           <Link href="/">About Nielsen Measurement</Link>
           <Link href="/">Do Not Sell or Share My Personal Information</Link>
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 mt-2">
           <div className="font-bold">Follow Us</div>
           <Link href="/">Facebook</Link>
           <Link href="/">Instagram</Link>
@@ -47,7 +47,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="bg-white h-[0.5px]"></div>
-      <div className="wrapper flex justify-between items-center">
+      <div className="wrapper md:flex justify-between items-center">
         <Image
           src="/Logo.png"
           alt=""

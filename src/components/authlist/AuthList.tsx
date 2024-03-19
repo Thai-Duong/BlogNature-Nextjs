@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function AuthList() {
   const { status } = useSession();
   return (
-    <div className="flex items-center gap-3 text-xl">
+    <div className="flex items-center gap-3 text-sm md:text-xl">
       {status === "unauthenticated" ? (
         <Link href="/login">Login</Link>
       ) : (

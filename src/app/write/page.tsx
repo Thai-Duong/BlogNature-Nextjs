@@ -1,17 +1,16 @@
 "use client";
-import React, { ChangeEvent, useEffect, useState } from "react";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.bubble.css";
+import { app } from "@/utils/firebbase";
+import axios from "axios";
 import {
+  getDownloadURL,
   getStorage,
   ref,
   uploadBytesResumable,
-  getDownloadURL,
 } from "firebase/storage";
 import { useRouter } from "next/navigation";
-import { app } from "@/utils/firebbase";
-import { type } from "os";
-import axios from "axios";
+import { useEffect, useState } from "react";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.bubble.css";
 const storage = getStorage(app);
 
 export default function WritePage() {

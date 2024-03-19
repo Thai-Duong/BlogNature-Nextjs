@@ -3,7 +3,6 @@ import { NextResponse } from "next/server";
 
 export const GET = async (req: any, { params }: any) => {
   const { slug } = params;
-
   try {
     const categories = await prisma.category.findMany({
       where: { slug },
