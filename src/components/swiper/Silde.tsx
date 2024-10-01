@@ -9,6 +9,7 @@ import Image from "next/image";
 import { iCategories } from "@/types/categories.type";
 import Link from "next/link";
 export default function Silde({ data }: { data: iCategories }) {
+  console.log("data", data);
   return (
     <div className="my-5" key={data.id}>
       <Swiper

@@ -2,8 +2,10 @@ import axios from "axios";
 
 export const getAllCategories = async (slug: string) => {
   try {
-    const res = await axios.get(`http://localhost:8080/user/update/${slug}`);
-    return res.data;
+    const response = await axios.get(
+      `http://localhost:3000/api/categories/${slug}`
+    );
+    return response.data;
   } catch (error) {
     console.error(error);
   }
