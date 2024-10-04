@@ -5,15 +5,17 @@ import Link from "next/link";
 
 export default function Card({ item }: { item: iPost }) {
   return (
-    <div className="border-2 border-gray-400 h-[380px] w-full mt-5">
-      <Image
-        src={item.img}
-        alt="photo"
-        width={600}
-        height={10}
-        className="h-[200px] object-cover"
-      />
-      <div className="p-2">
+    <div className="shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] border-gray-400 h-[380px] w-full mt-5">
+      <div className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
+        <Image
+          src={item.img}
+          alt="photo"
+          width={600}
+          height={10}
+          className="h-[200px] object-cover max-w-xs transition duration-300 ease-in-out hover:scale-110"
+        />
+      </div>
+      <div className="p-3">
         <div className="uppercase">{item.catSlug}</div>
         <div className="min-h-[3rem] text-xl line-clamp-3 font-bold py-3">
           {item.title}

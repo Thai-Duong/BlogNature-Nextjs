@@ -1,30 +1,26 @@
 import { getCategories } from "@/app/getApi/categories";
 import { iCategories } from "@/types/categories.type";
-import Link from "next/link";
+import {
+  NavigationMenu,
+  NavigationMenuLink,
+} from "@radix-ui/react-navigation-menu";
+import { navigationMenuTriggerStyle } from "../ui/navigation-menu";
 
 const CategoryList = async () => {
   const data = await getCategories();
   if (!data) return null;
   return (
-    <div className="mt-2 wrapper">
-      <h5 className="mb-2 text-2xl font-bold">Popular Category</h5>
-      <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
-        {data &&
-          data.map((item: iCategories) => (
-            <div
-              key={item.id}
-              className="flex justify-center bg-[#57c4ff31] py-2 border rounded-md"
-            >
-              <Link
-                href={`/categories/${item.slug}`}
-                className="flex items-center px-2"
-              >
-                {item.title}
-              </Link>
-            </div>
-          ))}
-      </div>
-    </div>
+    <NavigationMenu className="flex flex-col">
+      {data?.map((item: iCategories) => (
+        <NavigationMenuLink
+          key={item.id}
+          href={`/categories/${item.slug}`}
+          className={navigationMenuTriggerStyle()}
+        >
+          {item.title}
+        </NavigationMenuLink>
+      ))}
+    </NavigationMenu>
   );
 };
 export default CategoryList;

@@ -7,10 +7,20 @@ import {
   ref,
   uploadBytesResumable,
 } from "firebase/storage";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.bubble.css";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
 const storage = getStorage(app);
 
 export default function WritePage() {
@@ -89,21 +99,33 @@ export default function WritePage() {
         className="w-full py-10 text-3xl focus:outline-none"
         onChange={(e) => setTitle(e.target.value)}
       />
-      <input
-        type="file"
-        onChange={(e) => setFile(e.target.files?.[0])}
-        className="border"
-      />
-      <select
-        onChange={(e) => setCatSlug(e.target.value)}
-        className="py-1 border mx-5"
-      >
-        <option value="animals">Animals</option>
-        <option value="environment">Environment</option>
-        <option value="history-culture">History and Culture</option>
-        <option value="science">Science</option>
-        <option value="travel">Travel</option>
-      </select>
+      <div className="flex">
+        <div className="grid w-full max-w-sm items-center gap-1.5 ">
+          {" "}
+          <Input
+            id="picture"
+            type="file"
+            onChange={(e) => setFile(e.target.files?.[0])}
+          />
+        </div>
+        <Select>
+          <SelectTrigger className="w-[180px]">
+            <SelectValue
+              placeholder="Animals"
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setCatSlug(e.target.value)
+              }
+            />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="animals">Animals</SelectItem>
+            <SelectItem value="environment">Environment</SelectItem>
+            <SelectItem value="history-culture">History and Culture</SelectItem>
+            <SelectItem value="science">Science</SelectItem>
+            <SelectItem value="travel">Travel</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
       <ReactQuill
         theme="bubble"
         value={value}
@@ -111,12 +133,13 @@ export default function WritePage() {
         placeholder="Tell your story"
         className="m-5 text-lg border-none"
       />
-      <button
+      <Button
         onClick={handleSubmit}
-        className="px-4 py-2 font-bold text-white bg-green-600 border rounded-lg"
+        variant="outline"
+        className="text-white bg-green-600 font-bold"
       >
         Pulish
-      </button>
+      </Button>
     </div>
   );
 }

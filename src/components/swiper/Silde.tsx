@@ -34,13 +34,15 @@ export default function Silde({ data }: { data: iCategories }) {
         {data.Posts.map((item: iPost) => (
           <SwiperSlide key={item._id}>
             <Link href={`/posts/${item.slug}`}>
-              <Image
-                src={item.img}
-                height={1000}
-                width={1000}
-                alt=""
-                className="h-[260px] object-cover"
-              />
+              <div className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
+                <Image
+                  src={item.img}
+                  alt="photo"
+                  width={1000}
+                  height={1000}
+                  className="h-[260px] object-cover max-w-xs transition duration-300 ease-in-out hover:scale-110"
+                />
+              </div>
             </Link>
           </SwiperSlide>
         ))}

@@ -1,19 +1,39 @@
 "use client";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+} from "@radix-ui/react-navigation-menu";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
+import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 
 export default function AuthList() {
   const { status } = useSession();
   return (
-    <div className="flex items-center gap-3 text-sm md:text-xl">
+    <>
       {status === "unauthenticated" ? (
-        <Link href="/login">Login</Link>
+        <Link href="/login" legacyBehavior passHref>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            Sign In
+          </NavigationMenuLink>
+        </Link>
       ) : (
-        <div className="flex gap-3">
-          <div onClick={() => signOut()}>Logout</div>
-          <Link href="/write">Write</Link>
-        </div>
+        <>
+          <NavigationMenuLink
+            className={navigationMenuTriggerStyle()}
+            onClick={() => signOut()}
+          >
+            Sign Out
+          </NavigationMenuLink>
+
+          <Link href="/write" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              Write
+            </NavigationMenuLink>
+          </Link>
+        </>
       )}
-    </div>
+    </>
   );
 }
