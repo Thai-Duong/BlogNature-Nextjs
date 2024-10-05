@@ -11,7 +11,7 @@ import {
 import CategoryList from "../categoryList/CategoryList";
 export default function Navbar() {
   return (
-    <div className="flex justify-between py-2 px-2 bg-white md:text-2xl text-lg">
+    <div className="flex justify-between py-2 px-2 bg-white md:text-2xl text-lg border-b-2">
       <Link href="/" className=" font-bold">
         National Geographic Blog
       </Link>

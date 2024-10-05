@@ -15,9 +15,9 @@ export default function Card({ item }: { item: iPost }) {
           className="h-[200px] object-cover max-w-xs transition duration-300 ease-in-out hover:scale-110"
         />
       </div>
-      <div className="p-3">
+      <div className="py-3 px-5">
         <div className="uppercase">{item.catSlug}</div>
-        <div className="min-h-[3rem] text-xl line-clamp-3 font-bold py-3">
+        <div className="min-h-[3rem] text-lg line-clamp-3 font-bold py-3">
           {item.title}
         </div>
         <div className="flex">

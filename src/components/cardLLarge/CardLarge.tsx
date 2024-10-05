@@ -12,7 +12,7 @@ const CardLarge = async ({ item }: { item: iPost }) => {
       <Image
         src={item.img}
         alt="photo"
-        width={1000}
+        width={800}
         height={400}
         className="h-[380px] object-cover max-w-2xl opacity-70 transition duration-300 ease-in-out hover:scale-110"
       />

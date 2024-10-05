@@ -1,5 +1,5 @@
 import { getAllCategories } from "@/app/getApi/categories";
-import Silde from "@/components/swiper/Silde";
+import Silde from "@/components/slider/Silde";
 import Image from "next/image";
 import Link from "next/link";
 

@@ -108,14 +108,9 @@ export default function WritePage() {
             onChange={(e) => setFile(e.target.files?.[0])}
           />
         </div>
-        <Select>
+        <Select onValueChange={(value) => setCatSlug(value)}>
           <SelectTrigger className="w-[180px]">
-            <SelectValue
-              placeholder="Animals"
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                setCatSlug(e.target.value)
-              }
-            />
+            <SelectValue placeholder="Animals" />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="animals">Animals</SelectItem>

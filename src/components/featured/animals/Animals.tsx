@@ -18,7 +18,7 @@ const LastStory = async () => {
       </div>
       <div className="md:grid md:grid-cols-12 gap-10">
         <div className="px-3 md:col-span-4">
-          <CardSmall data={data} />
+          <CardSmall data={data} title="TODAY'S PICKS" />
         </div>
         <div className="col-span-8 mx-auto">
           <CardLarge item={itemCardLagre} />
