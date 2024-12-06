@@ -5,7 +5,7 @@ import Travel from "@/components/featured/travel/Travel";
 
 export default function Home() {
   return (
-    <div className="py-5">
+    <div className="py-20">
       <LastStory />
       <Culture />
       <Travel />

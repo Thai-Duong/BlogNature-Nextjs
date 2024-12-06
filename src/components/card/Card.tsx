@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Card({ item }: { item: iPost }) {
   return (
-    <div className="shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] border-gray-400 h-[380px] w-full mt-5">
+    <div className=" bg-white shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] border-gray-400 h-[420px] w-[320px]  mt-5">
       <div className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
         <Image
           src={item.img}
@@ -17,7 +17,7 @@ export default function Card({ item }: { item: iPost }) {
       </div>
       <div className="py-3 px-5">
         <div className="uppercase">{item.catSlug}</div>
-        <div className="min-h-[3rem] text-lg line-clamp-3 font-bold py-3">
+        <div className="min-h-[5rem] text-lg line-clamp-3 font-bold py-8">
           {item.title}
         </div>
         <div className="flex">

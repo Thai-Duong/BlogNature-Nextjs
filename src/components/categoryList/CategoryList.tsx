@@ -1,10 +1,11 @@
-import { getCategories } from "@/app/getApi/categories";
 import { iCategories } from "@/types/categories.type";
 import {
   NavigationMenu,
   NavigationMenuLink,
 } from "@radix-ui/react-navigation-menu";
 import { navigationMenuTriggerStyle } from "../ui/navigation-menu";
+import axios from "axios";
+import { getCategories } from "@/app/getApi/categories";
 
 const CategoryList = async () => {
   const data = await getCategories();

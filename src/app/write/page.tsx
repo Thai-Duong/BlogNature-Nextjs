@@ -101,7 +101,6 @@ export default function WritePage() {
       />
       <div className="flex">
         <div className="grid w-full max-w-sm items-center gap-1.5 ">
-          {" "}
           <Input
             id="picture"
             type="file"

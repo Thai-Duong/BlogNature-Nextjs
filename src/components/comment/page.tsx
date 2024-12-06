@@ -11,6 +11,7 @@ export default function Comment({ postSlug }: any) {
   const [data, setData] = useState<iComment[]>();
   const [desc, setDesc] = useState("");
   const { status } = useSession();
+
   const getData = async ({ postSlug }: any) => {
     try {
       const response = await axios.get(

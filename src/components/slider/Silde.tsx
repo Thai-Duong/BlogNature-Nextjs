@@ -28,7 +28,7 @@ export default function Silde({ data }: { data: iCategories }) {
                     alt="photo"
                     width={200}
                     height={1000}
-                    className="h-[260px] object-cover max-w-xs transition duration-300 ease-in-out hover:scale-110"
+                    className="h-[260px] w-[170px] object-cover max-w-xs transition duration-300 ease-in-out hover:scale-110"
                   />
                 </div>
               </Link>
