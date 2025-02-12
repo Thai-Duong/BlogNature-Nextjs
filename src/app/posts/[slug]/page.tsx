@@ -8,14 +8,14 @@ const Post = async ({ params }: any) => {
   const data = await getAllPosts(slug);
   if (!data) return null;
   return (
-    <div>
+    <div className="">
       <div className="lg:flex">
         <Image
           src={data.img}
-          alt=""
+          alt={data.title || "Post image"}
           width={1000}
           height={200}
-          className="h-[600px] w-[800px] object-cover mb-3"
+          className="w-full h-auto max-h-[600px] object-cover mb-3"
         />
         <div className="my-auto mx-5">
           <span className="p-2 border-2 border-black hover:text-white hover:bg-black">

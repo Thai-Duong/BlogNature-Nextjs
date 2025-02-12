@@ -34,7 +34,7 @@ model Session {
   sessionToken String   @unique
   userId       String
   expires      DateTime
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade) // xóa tài khoản mà không làm mất bài viết hoặc bình luận
 }
 
 model User {
@@ -43,6 +43,7 @@ model User {
   email         String    @unique
   emailVerified DateTime?
   image         String?
+  role          String    @default("user") //  Phan quyen
   accounts      Account[]
   sessions      Session[]
   Post          Post[]
@@ -75,17 +76,23 @@ model Post {
   views     Int       @default(0)
   catSlug   String
   cat       Category  @relation(fields: [catSlug], references: [slug])
-  userEmail String
-  user      User      @relation(fields: [userEmail], references: [email])
+  userEmail String?   // Cho phép null
+  user      User?     @relation(fields: [userEmail], references: [email], onDelete: SetNull) // Cho phép null
   comments  Comment[]
+  deletedAt DateTime?
 }
 
 model Comment {
-  id        String   @id @default(cuid()) @map("_id")
-  createdAt DateTime @default(now())
-  desc      String
-  userEmail String
-  user      User     @relation(fields: [userEmail], references: [email])
-  postSlug  String
-  post      Post     @relation(fields: [postSlug], references: [slug])
+  id         String   @id @default(cuid()) @map("_id")
+  createdAt  DateTime @default(now())
+  desc       String
+  userEmail  String
+  user       User     @relation(fields: [userEmail], references: [email], onDelete: Cascade)
+  postSlug   String
+  post       Post     @relation(fields: [postSlug], references: [slug])
+
+  parentId   String?  // Nếu là reply thì có parentId
+  parent     Comment? @relation("CommentReplies", fields: [parentId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  replies    Comment[] @relation("CommentReplies")
 }
+

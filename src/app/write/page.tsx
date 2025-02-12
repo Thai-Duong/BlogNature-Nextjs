@@ -80,19 +80,28 @@ export default function WritePage() {
       .replace(/^-+|-+$/g, "");
 
   const handleSubmit = async () => {
-    const res = await axios.post("/api/posts", {
-      title,
-      desc: value,
-      img: media,
-      slug: slugify(title),
-      catSlug: catSlug || "animals",
-    });
-    if (res.status === 200) {
-      router.push(`/posts/${res.data.slug}`);
+    if (!title || !value || !media) {
+      alert("Please fill in all fields before publishing.");
+      return;
+    }
+    try {
+      const res = await axios.post("/api/posts", {
+        title,
+        desc: value,
+        img: media,
+        slug: slugify(title),
+        catSlug: catSlug || "animals",
+      });
+      if (res.status === 200) {
+        router.push(`/posts/${res.data.slug}`);
+      }
+    } catch (error) {
+      alert("Failed to publish post. Please try again.");
     }
   };
+
   return (
-    <div className="py-10 wrapper bg-white">
+    <div className="px-24 p-10 bg-white">
       <input
         type="text"
         placeholder="Main Title"
@@ -132,7 +141,7 @@ export default function WritePage() {
         variant="outline"
         className="text-white bg-green-600 font-bold"
       >
-        Pulish
+        Publish
       </Button>
     </div>
   );

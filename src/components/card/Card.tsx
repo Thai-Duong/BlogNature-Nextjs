@@ -5,22 +5,22 @@ import Link from "next/link";
 
 export default function Card({ item }: { item: iPost }) {
   return (
-    <div className=" bg-white shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] border-gray-400 h-[420px] w-[320px]  mt-5">
-      <div className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
+    <div className="bg-white shadow-lg border border-gray-200 h-[420px] w-[320px] mt-5 flex flex-col">
+      <div className="relative overflow-hidden">
         <Image
           src={item.img}
-          alt="photo"
+          alt={item.title}
           width={600}
-          height={10}
-          className="h-[200px] object-cover max-w-xs transition duration-300 ease-in-out hover:scale-110"
+          height={200}
+          className="h-[200px] w-full object-cover transition duration-300 ease-in-out hover:scale-110"
         />
       </div>
-      <div className="py-3 px-5">
-        <div className="uppercase">{item.catSlug}</div>
-        <div className="min-h-[5rem] text-lg line-clamp-3 font-bold py-8">
+      <div className="py-4 px-5 flex flex-col flex-grow">
+        <div className="text-sm uppercase text-gray-500">{item.catSlug}</div>
+        <h3 className="min-h-[5rem] text-xl font-bold py-4 line-clamp-3 flex-grow">
           {item.title}
-        </div>
-        <div className="flex">
+        </h3>
+        <div className="flex items-center mt-auto">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -35,7 +35,7 @@ export default function Card({ item }: { item: iPost }) {
               d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
             />
           </svg>
-          <Link href={`/posts/${item.slug}`} className="ml-2">
+          <Link href={`/posts/${item.slug}`} className="ml-2 font-medium">
             Read More
           </Link>
         </div>
